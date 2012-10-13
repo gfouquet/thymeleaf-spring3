@@ -23,7 +23,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.thymeleaf</groupId>
   <artifactId>thymeleaf-spring3</artifactId>
-  <packaging>jar</packaging>
+  <packaging>bundle</packaging>
   <version>2.0.14-SNAPSHOT</version>
   <name>thymeleaf-spring3</name>
   <url>http://www.thymeleaf.org</url>
@@ -193,7 +193,18 @@
         <version>2.1</version>
       </plugin>
 
-
+      <plugin>
+        <groupId>org.apache.felix</groupId>
+        <artifactId>maven-bundle-plugin</artifactId>
+        <extensions>true</extensions>
+        <version>2.3.7</version>
+        <configuration>
+          <instructions>
+            <_nouses>true</_nouses>
+              <Export-Package>org.thymeleaf.dtd.thymeleaf-spring3*,org.thymeleaf.spring3*</Export-Package>
+          </instructions>
+        </configuration>
+      </plugin>
     </plugins>
     
   </build>
